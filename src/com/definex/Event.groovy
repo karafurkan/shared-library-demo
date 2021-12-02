@@ -32,7 +32,7 @@ class Event {
 
             if(failPipeline){
                 //script{
-                    error "deneme errorrororo"
+                    script.error "deneme errorrororo"
                 //}
             }
         }
