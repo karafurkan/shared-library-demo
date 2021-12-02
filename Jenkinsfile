@@ -1,4 +1,5 @@
-import com.definex.Constants
+@Library('definex-shared-library')
+import com.definex.*
 
 def gv
 
