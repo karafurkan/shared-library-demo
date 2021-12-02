@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     //gv.buildApp()
-                    gv.echoTest("deneme")
+                    gv.echoTest(Constants.SLACK_MESSAGE)
                 }
             }
         }
