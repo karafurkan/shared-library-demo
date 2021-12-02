@@ -11,7 +11,7 @@ import javax.xml.bind.ValidationException
 
 def call(){
     try {
-        println "throwing an exception";
+        log.info "throwing an exception";
         ValidationException validationException = new ValidationException("Test Validation Exception Thrown from action()");
         throw validationException;
     } catch (ValidationException ex) {
