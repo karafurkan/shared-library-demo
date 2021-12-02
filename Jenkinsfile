@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     //gv.buildApp()
-                    gv.echoTest(Constants.SLACK_MESSAGE)
+                    gv.echoTest(AnotherConst.SLACK_MESSAGE_NEW)
                 }
             }
         }
