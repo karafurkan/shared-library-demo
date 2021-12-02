@@ -10,13 +10,16 @@ import javax.xml.bind.ValidationException
 
 
 def call(){
+
+    fail "faileeeeeddd";
+
     try {
-        println "throwing an exception"
+        println "throwing an exception";
         ValidationException validationException = new ValidationException("Test Validation Exception Thrown from action()");
         throw validationException;
     } catch (ValidationException ex) {
-        println "ex.message: ${ex.message}"
-        println "publishing..."
-        Event.publish(this, "configuration-validation", ex.message)
+        println "ex.message: ${ex.message}";
+        println "publishing...";
+        Event.publish(this, "configuration-validation", ex.message);
     }
 }
