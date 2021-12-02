@@ -22,6 +22,7 @@ pipeline {
             steps {
                 script {
                     log.info("Stage -> build started.");
+                    // if parameter is false then publish non-fail pipeline event --> configuration-validation
                     action(false);
                     log.info("Stage -> build ended!");
                 }
@@ -31,6 +32,8 @@ pipeline {
             steps {
                 script {
                     log.info("Stage -> test started.");
+                    // if parameter is true then publish fail pipeline event --> other-exceptions
+                    // after the action(true) function call, pipeline fails
                     action(true);
                     log.info("Stage -> test ended!");
                 }
