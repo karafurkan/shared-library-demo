@@ -20,7 +20,14 @@ class Event {
      * @param args Arguments that will be passed to the closure
      */
     public static void publish(script, String eventName, Object... args) {
-        //TODO
+        final List<EventSubscription> eventSubscriptionList = eventMap.get(eventName);
+        if(eventSubscriptionList == null){
+            return;
+        }
+
+        for(final EventSubscription eventSubscription:eventSubscriptionList){
+            eventSubscription.closure(args)
+        }
 
     }
 
@@ -32,11 +39,13 @@ class Event {
      * @param closure Closure to execute
      */
     public static void subscribe(String eventName, boolean failPipeline, Closure closure) {
-        //TODO
         final EventSubscription eventSubscription = new EventSubscription(failPipeline, closure);
-
-        //final List<EventSubscription> eventSubscriptionList
-
+        List<EventSubscription> eventSubscriptionList = eventMap.get(eventName);
+        if(eventSubscriptionList == null){
+            eventSubscriptionList = new ArrayList<>();
+        }
+        eventSubscriptionList.add(eventSubscription);
+        eventMap.put(eventName, eventSubscriptionList)
     }
 
 
