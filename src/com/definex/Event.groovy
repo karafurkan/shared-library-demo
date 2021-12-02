@@ -30,10 +30,10 @@ class Event {
 
             final boolean failPipeline = eventSubscription.getFailPipeline();
 
+            script.log.info("Fail pipeline: ${failPipeline}");
+
             if(failPipeline){
-                //script{
-                    script.error "deneme errorrororo"
-                //}
+                script.error "Pipeline failed!";
             }
         }
     }

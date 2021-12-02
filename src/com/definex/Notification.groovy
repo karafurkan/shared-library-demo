@@ -9,7 +9,7 @@ import com.definex.Event
  */
 class Notification {
     public static void init(script) {
-        Event.subscribe("configuration-validation", true) { message ->
+        Event.subscribe("configuration-validation", false) { message ->
             script.log.warning("configuration validation error has occurred: " + message)
         }
 
