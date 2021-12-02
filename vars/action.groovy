@@ -8,6 +8,6 @@
 
 
 def call(){
-    script.log.warning("inside action configuration validation error has occurred: ")
+    //script.log.warning("inside action configuration validation error has occurred: ")
     println "deneme action"
 }
