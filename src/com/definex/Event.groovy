@@ -33,7 +33,7 @@ class Event {
      */
     public static void subscribe(String eventName, boolean failPipeline, Closure closure) {
         //TODO
-        final EventSubscription eventSubscription = new EventSubscription("ege kocabaş");
+        final EventSubscription eventSubscription = new EventSubscription(failPipeline, closure);
 
         //final List<EventSubscription> eventSubscriptionList
 

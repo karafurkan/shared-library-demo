@@ -7,12 +7,13 @@ package com.definex
  */
 class EventSubscription {
 
-    public final name;
+    public final boolean failPipeline;
 
-    public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth EventSubscription";
+    public final Closure closure;
 
-    EventSubscription(String name){
-        this.name=name;
+    EventSubscription(boolean failPipeline, Closure closure){
+        this.failPipeline=failPipeline;
+        this.closure=closure;
     }
 
 }
