@@ -14,7 +14,8 @@ pipeline {
         stage("init") {
             steps {
                 script {
-                    Notification.init(this)
+                    log.deneme()
+                    //Notification.init(this)
                     gv = load "script.groovy"
                 }
             }
