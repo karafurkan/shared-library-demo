@@ -8,7 +8,7 @@ import com.definex.EventSubscription
  * @author ege
  */
 class Event {
-    public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth";
+    public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth eveeent";
 
     private static Map<String, List<EventSubscription>> eventMap = new HashMap<>();
 }
