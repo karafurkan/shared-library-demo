@@ -13,7 +13,7 @@ class Notification {
         }
 
          */
-        println "hello from init ${message}"
+        println "hello from init ${script}"
 
     }
 }
