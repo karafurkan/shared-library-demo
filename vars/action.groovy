@@ -1,5 +1,7 @@
 import com.definex.Event
 
+import javax.xml.bind.ValidationException
+
 /**
  * Created on December, 2021
  *
@@ -8,15 +10,13 @@ import com.definex.Event
 
 
 def call(){
-    //script.log.warning("inside action configuration validation error has occurred: ")
     println "deneme action"
 
     try {
         println "throwing an exception"
-        Notification.asd()
-        //throw new Exception()
-    } catch (Exception ex) {
-
+        ValidationException validationException = new ValidationException("Test Validation Exception Thrown from action()");
+        throw validationException;
+    } catch (ValidationException ex) {
         println "ex.message: ${ex.message}"
         println "publishing..."
         Event.publish(this, "configuration-validation", ex.message)
