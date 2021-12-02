@@ -22,19 +22,34 @@ class Event {
         if(eventSubscriptionList == null){
             return;
         }
+
+        boolean failPipeline = false;
+
+        // Loop over each event subscriber
         eventSubscriptionList.each{ eventSubscription ->
+
+            // Loop over each arguments
             args.each{ arg ->
                 final Closure closure = eventSubscription.getClosure();
+
+                // Run closure with an argument
                 closure(arg);
             }
 
-            final boolean failPipeline = eventSubscription.getFailPipeline();
 
-            script.log.warning("Fail pipeline: ${failPipeline}");
+            final boolean subscriptionFailPipeline = eventSubscription.getFailPipeline();
 
-            if(failPipeline){
-                script.error "Pipeline failed!";
+            script.log.warning("Subscription Fail pipeline: ${subscriptionFailPipeline}");
+
+            // if it fails the pipeline wait for another subscribers to finish execution
+            if(subscriptionFailPipeline){
+                failPipeline = true;
             }
+        }
+
+        // After each subscriber finishes, fail the pipeline if one of them wants it to fail
+        if(failPipeline){
+            script.error "Pipeline failed!";
         }
     }
 
@@ -47,10 +62,13 @@ class Event {
      */
     public static void subscribe(String eventName, boolean failPipeline, Closure closure) {
         final EventSubscription eventSubscription = new EventSubscription(failPipeline, closure);
+        // Get relevant events List of EventSubscription
         List<EventSubscription> eventSubscriptionList = eventMap.get(eventName);
+        // If list is empty, create a list
         if(eventSubscriptionList == null){
             eventSubscriptionList = new ArrayList<>();
         }
+        // Add new subscriber to the list, and update the eventMap
         eventSubscriptionList.add(eventSubscription);
         eventMap.put(eventName, eventSubscriptionList)
     }

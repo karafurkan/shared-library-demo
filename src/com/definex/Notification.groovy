@@ -8,6 +8,9 @@ import com.definex.Event
  * @author ege
  */
 class Notification {
+
+    // Event subscribers
+
     public static void initConfigurationValidation(script) {
         Event.subscribe("configuration-validation", false) { message ->
             script.log.warning("configuration validation error has occurred: " + message)
