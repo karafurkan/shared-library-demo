@@ -6,12 +6,14 @@
  * @author ege
  */
 
+
+
 def call(){
     //script.log.warning("inside action configuration validation error has occurred: ")
     println "log call"
 }
 
-def deneme(){
+def warning(String logMessage){
     //script.log.warning("inside action configuration validation error has occurred: ")
-    println "log denemeeeeeee"
+    println "log denemeeeeeee ${logMessage}"
 }
