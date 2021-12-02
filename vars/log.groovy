@@ -25,6 +25,6 @@ def error(String logMessage){
 
 def print(String logLevel, String logMessage){
     Date now = new Date()
-    final String formattedDate = now.format("yyyyMMdd-HH:mm:ss.SSS", TimeZone.getTimeZone('UTC'));
+    final String formattedDate = now.format("dd/MM/yyyy-HH:mm:ss.SSS", TimeZone.getTimeZone('UTC'));
     println "${formattedDate} - ${logLevel}: ${logMessage}"
 }
