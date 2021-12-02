@@ -24,10 +24,13 @@ class Event {
         }
         eventSubscriptionList.each{ eventSubscription ->
             args.each{ arg ->
-                eventSubscription.closure(arg);
+                final Closure closure = eventSubscription.getClosure();
+                closure(arg);
             }
 
-            if(eventSubscription.failPipeline == true){
+            final boolean failPipeline = eventSubscription.getFailPipeline();
+
+            if(failPipeline){
                 fail("Pipeline failed with an error!");
             }
         }

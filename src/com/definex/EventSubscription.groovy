@@ -7,13 +7,21 @@ package com.definex
  */
 class EventSubscription {
 
-    public final boolean failPipeline;
+    private final boolean failPipeline;
 
-    public final Closure closure;
+    private final Closure closure;
 
-    EventSubscription(boolean failPipeline, Closure closure){
-        this.failPipeline=failPipeline;
-        this.closure=closure;
+    EventSubscription(boolean failPipeline, Closure closure) {
+        this.failPipeline = failPipeline;
+        this.closure = closure;
+    }
+
+    boolean getFailPipeline() {
+        return failPipeline
+    }
+
+    Closure getClosure() {
+        return closure
     }
 
 }
