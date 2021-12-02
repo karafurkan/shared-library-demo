@@ -12,7 +12,7 @@ def debug(String logMessage){
 }
 
 def info(String logMessage){
-    print("INFO", logMessage)
+    print("INFO ${this.stage}", logMessage)
 }
 
 def warning(String logMessage){
