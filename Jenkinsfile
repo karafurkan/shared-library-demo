@@ -23,6 +23,7 @@ pipeline {
                     gv.echoTest(AnotherConst.SLACK_MESSAGE_NEW)
                     action()
                     action
+                    error "error message"
                 }
             }
         }
