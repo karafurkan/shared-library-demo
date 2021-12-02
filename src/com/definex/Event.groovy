@@ -30,7 +30,7 @@ class Event {
 
             final boolean failPipeline = eventSubscription.getFailPipeline();
 
-            script.log.info("Fail pipeline: ${failPipeline}");
+            script.log.warning("Fail pipeline: ${failPipeline}");
 
             if(failPipeline){
                 script.error "Pipeline failed!";

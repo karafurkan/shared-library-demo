@@ -8,10 +8,14 @@ import com.definex.Event
  * @author ege
  */
 class Notification {
-    public static void init(script) {
+    public static void initConfigurationValidation(script) {
         Event.subscribe("configuration-validation", false) { message ->
             script.log.warning("configuration validation error has occurred: " + message)
         }
-
+    }
+    public static void initOtherExceptions(script) {
+        Event.subscribe("other-exceptions", true) { message ->
+            script.log.error("configuration validation error has occurred: " + message)
+        }
     }
 }

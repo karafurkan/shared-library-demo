@@ -6,10 +6,25 @@
  * @author ege
  */
 
+
+def debug(String logMessage){
+    print("DEBUG", logMessage)
+}
+
 def info(String logMessage){
-    println "INFO: ${logMessage}"
+    print("INFO", logMessage)
 }
 
 def warning(String logMessage){
-    println "WARNING: ${logMessage}"
+    print("WARNING", logMessage)
+}
+
+def error(String logMessage){
+    print("ERROR", logMessage)
+}
+
+def print(String logLevel, String logMessage){
+    Date now = new Date()
+    final String formattedDate = now.format("yyyyMMdd-HH:mm:ss.SSS", TimeZone.getTimeZone('UTC'));
+    println "${formattedDate} - ${logLevel}: ${logMessage}"
 }

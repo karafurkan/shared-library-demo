@@ -1,50 +1,40 @@
 @Library('definex-shared-library') _
 import com.definex.*
 
-def gv
-//def action
-
 pipeline {
     agent any
     stages {
         stage("init") {
             steps {
                 script {
-                    //failPipeline()
-                    Notification.init(this)
-                    log.warning("aaa")
-                    gv = load "script.groovy"
+                    // Initialize subscriptions
+
+                    // if ConfigurationValidation is caught --> log warning message
+                    Notification.initConfigurationValidation(this)
+                    // if other Exceptions are caught --> log error message and fail pipeline
+                    Notification.initOtherExceptions(this)
                 }
             }
         }
         stage("build") {
             steps {
                 script {
-                    //gv.buildApp()
-                    gv.echoTest(AnotherConst.SLACK_MESSAGE_NEW)
-                    action()
-                    action
-                    //error "error message"
+                    log.info("Stage -> build");
+                    action();
                 }
             }
         }
         stage("test") {
-            when {
-                expression {
-                    params.executeTests
-                }
-            }
             steps {
                 script {
-                    gv.testApp()
-                    AnotherConst.deneme()
+                    log.info("Stage -> test");
                 }
             }
         }
         stage("deploy") {
             steps {
                 script {
-                    gv.deployApp()
+                    log.info("Stage -> deploy");
                 }
             }
         }

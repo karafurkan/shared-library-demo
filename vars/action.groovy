@@ -9,14 +9,25 @@ import javax.xml.bind.ValidationException
  */
 
 
-def call(){
+def call(boolean failPipeline){
     try {
-        log.info "throwing an exception";
-        ValidationException validationException = new ValidationException("Test Validation Exception Thrown from action()");
-        throw validationException;
-    } catch (ValidationException ex) {
-        println "ex.message: ${ex.message}";
-        println "publishing...";
-        Event.publish(this, "configuration-validation", ex.message);
+        log.info "Throwing an exception with failPipeline: ${failPipeline}";
+
+        Exception exception;
+
+        if(failPipeline){
+            exception = new Exception("Test Validation Exception Thrown from action()")
+        }
+        else {
+            exception = new ValidationException("Test Validation Exception Thrown from action()");
+        }
+
+        throw exception;
+    } catch (ValidationException validationException) {
+        log.debug "Publishing configuration-validation with ex.message: ${validationException.message}";
+        Event.publish(this, "configuration-validation", validationException.message);
+    } catch (Exception exception){
+        log.debug "Publishing other-exceptions with exception.message: ${exception.message}";
+        Event.publish(this, "other-exceptions", exception.message);
     }
 }
