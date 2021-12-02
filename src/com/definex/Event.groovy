@@ -22,11 +22,11 @@ class Event {
         if(eventSubscriptionList == null){
             return;
         }
-
-        for(final EventSubscription eventSubscription:eventSubscriptionList){
-            eventSubscription.closure(args)
+        eventSubscriptionList.each{ eventSubscription ->
+            args.each{ arg ->
+                eventSubscription.closure(arg)
+            }
         }
-
     }
 
 

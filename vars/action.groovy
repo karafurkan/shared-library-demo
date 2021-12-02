@@ -10,8 +10,6 @@ import javax.xml.bind.ValidationException
 
 
 def call(){
-    println "deneme action"
-
     try {
         println "throwing an exception"
         ValidationException validationException = new ValidationException("Test Validation Exception Thrown from action()");
