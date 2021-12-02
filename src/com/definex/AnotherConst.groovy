@@ -16,7 +16,7 @@ class AnotherConst {
 
 
     public static void deneme(){
-        script.log.warning("inside deneme() inside AnotherConst class --> configuration validation error has occurred: ")
+        //script.log.warning("inside deneme() inside AnotherConst class --> configuration validation error has occurred: ")
 
         logger.info('Hello from a Job DSL script!')
         //println "aaaaaaaaaaaaaaaaaa"
