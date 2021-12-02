@@ -22,6 +22,8 @@ pipeline {
                 script {
                     //gv.buildApp()
                     gv.echoTest(AnotherConst.SLACK_MESSAGE_NEW)
+                    action()
+                    action
                 }
             }
         }

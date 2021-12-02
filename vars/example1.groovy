@@ -5,3 +5,8 @@ def call(String name = "Alice") {
         """
     }
 }
+
+
+def action(){
+    println "deneme action"
+}
