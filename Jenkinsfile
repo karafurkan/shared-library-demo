@@ -2,7 +2,7 @@
 import com.definex.*
 
 def gv
-def action
+//def action
 
 pipeline {
     agent any
