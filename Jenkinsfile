@@ -15,7 +15,7 @@ pipeline {
             steps {
                 script {
 
-                    //log.warning(EventSubscription.SLACK_MESSAGE_NEW)
+                    log.warning(EventSubscription.SLACK_MESSAGE_NEW)
                     //log.warning(Event.SLACK_MESSAGE_NEW)
                     //log.warning(Notification.SLACK_MESSAGE_NEW)
 
