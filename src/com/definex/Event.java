@@ -1,7 +1,5 @@
-package com.definex
+package com.definex;
 
-import groovy.lang.Closure;
-import com.definex.EventSubscription;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +13,7 @@ public class Event {
 
 	public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth";
 
-	private static Map<String, List<EventSubscription>> eventMap = new HashMap<>();
+	private static Map<String, List<com.definex.EventSubscription>> eventMap = new HashMap<>();
 
 	/**
 	 * Execute the closures subscribed to the event.
@@ -24,9 +22,12 @@ public class Event {
 	 * @param eventName Published event name
 	 * @param args Arguments that will be passed to the closure
 	 */
+	/*
 	public static void publish(script, String eventName, Object... args) {
 		//TODO
 	}
+
+	 */
 
 	/**
 	 * Subscribe to an event so that the provided closure will be executed when the event is published.
@@ -34,7 +35,10 @@ public class Event {
 	 * @param failPipeline Fail the pipeline if any errors occur in the closure
 	 * @param closure Closure to execute
 	 */
+	/*
 	public static void subscribe(String eventName, boolean failPipeline, Closure closure) {
 		//TODO
 	}
+
+	 */
 }
