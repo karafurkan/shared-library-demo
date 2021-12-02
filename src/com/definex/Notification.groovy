@@ -1,4 +1,4 @@
-package com.definex
+package com.definex;
 
 import com.definex.Event;
 

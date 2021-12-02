@@ -14,7 +14,7 @@ pipeline {
         stage("init") {
             steps {
                 script {
-                    Notification.init()
+                    //Notification.init()
                     gv = load "script.groovy"
                 }
             }
