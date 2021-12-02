@@ -1,3 +1,5 @@
+import com.definex.Constants
+
 def gv
 
 pipeline {
@@ -17,7 +19,8 @@ pipeline {
         stage("build") {
             steps {
                 script {
-                    gv.buildApp()
+                    //gv.buildApp()
+                    gv.echoTest("deneme")
                 }
             }
         }

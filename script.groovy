@@ -11,4 +11,8 @@ def deployApp() {
     echo "deploying version ${params.VERSION}"
 }
 
+def echoTest(String echoString){
+    echo "echoTest fundtion...  ${echoString}"
+}
+
 return this
