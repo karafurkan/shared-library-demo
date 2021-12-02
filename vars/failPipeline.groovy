@@ -4,6 +4,8 @@
  * @author ege
  */
 
-def call(script){
-    script.fail "pipeline failed"
+def call(){
+    script{
+        error "deneme errorrororo"
+    }
 }
