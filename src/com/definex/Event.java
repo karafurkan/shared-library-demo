@@ -1,4 +1,4 @@
-package com.definex;
+package com.definex
 
 import groovy.lang.Closure;
 import com.definex.EventSubscription;
