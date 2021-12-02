@@ -7,6 +7,7 @@ pipeline {
         stage("init") {
             steps {
                 script {
+                    log.info(this.stage)
                     log.info("Stage -> init started.");
                     // Initialize subscriptions
 
