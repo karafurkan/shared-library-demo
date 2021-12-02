@@ -9,7 +9,7 @@ import com.definex.Event
  */
 class Notification {
 
-    public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth Notification";
+    //public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth Notification";
 
     public static void init(script) {
 

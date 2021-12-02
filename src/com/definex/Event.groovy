@@ -12,6 +12,18 @@ class Event {
 
     private static Map<String, List<EventSubscription>> eventMap = new HashMap<>();
 
+    /**
+     * Execute the closures subscribed to the event.
+     * It is guaranteed that all of the closures will be executed even when an error occurs in any of them.
+     * @param script Pipeline script object
+     * @param eventName Published event name
+     * @param args Arguments that will be passed to the closure
+     */
+    public static void publish(script, String eventName, Object... args) {
+        //TODO
+
+    }
+
 
     /**
      * Subscribe to an event so that the provided closure will be executed when the event is published.
@@ -21,6 +33,10 @@ class Event {
      */
     public static void subscribe(String eventName, boolean failPipeline, Closure closure) {
         //TODO
+        final EventSubscription eventSubscription = new EventSubscription("ege kocabaş");
+
+        //final List<EventSubscription> eventSubscriptionList
+
     }
 
 

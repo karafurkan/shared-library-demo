@@ -7,6 +7,12 @@ package com.definex
  */
 class EventSubscription {
 
+    public final name;
+
     public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth EventSubscription";
+
+    EventSubscription(String name){
+        this.name=name;
+    }
 
 }
