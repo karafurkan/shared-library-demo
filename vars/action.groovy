@@ -16,6 +16,9 @@ def call(){
         Notification.asd()
         //throw new Exception()
     } catch (Exception ex) {
+
+        println "ex.message: ${ex.message}"
+        println "publishing..."
         Event.publish(this, "configuration-validation", ex.message)
     }
 }
