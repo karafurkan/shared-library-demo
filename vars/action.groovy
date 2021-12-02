@@ -17,7 +17,7 @@ def call(boolean failPipeline) {
         Exception exception;
         final String exceptionMessage = "%s Thrown from action(${failPipeline})"
 
-        if (failPipeline) {
+        if (!failPipeline) {
             exception = new Exception(String.format(exceptionMessage, "Test Validation Exception"))
         } else {
             exception = new ValidationException(String.format(exceptionMessage, "Test Exception"));
