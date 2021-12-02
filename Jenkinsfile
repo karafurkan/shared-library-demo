@@ -14,6 +14,11 @@ pipeline {
         stage("init") {
             steps {
                 script {
+
+                    log.warning(EventSubscription.SLACK_MESSAGE_NEW)
+                    log.warning(Event.SLACK_MESSAGE_NEW)
+                    log.warning(Notification.SLACK_MESSAGE_NEW)
+
                     Notification.init(this)
                     log.warning("aaa")
                     gv = load "script.groovy"

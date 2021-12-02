@@ -5,6 +5,9 @@ package com.definex
  * @author ege
  */
 class Notification {
+
+    public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth
+
     public static void init(script) {
         /*
         Event.subscribe("configuration-validation", false) { message ->

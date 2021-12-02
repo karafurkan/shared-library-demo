@@ -6,4 +6,7 @@ package com.definex
  * @author ege
  */
 class EventSubscription {
+
+    public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth
+
 }
