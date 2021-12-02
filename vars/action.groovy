@@ -7,6 +7,6 @@
  */
 
 
-def action(){
+def call(){
     println "deneme action"
 }
