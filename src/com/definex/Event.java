@@ -1,9 +1,10 @@
 package com.definex;
 
+/*
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+*/
 /**
  * Created on December, 2021
  *
@@ -12,9 +13,9 @@ import java.util.Map;
 class Event {
 
 	public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth";
-
+/*
 	private static Map<String, List<com.definex.EventSubscription>> eventMap = new HashMap<>();
-
+*/
 	/**
 	 * Execute the closures subscribed to the event.
 	 * It is guaranteed that all of the closures will be executed even when an error occurs in any of them.
