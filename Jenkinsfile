@@ -10,7 +10,7 @@ pipeline {
         stage("init") {
             steps {
                 script {
-                    failPipeline(this)
+                    failPipeline()
                     Notification.init(this)
                     log.warning("aaa")
                     gv = load "script.groovy"
