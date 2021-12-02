@@ -31,7 +31,9 @@ class Event {
             final boolean failPipeline = eventSubscription.getFailPipeline();
 
             if(failPipeline){
-                script.fail("Pipeline failed with an error!");
+                script{
+                    error "deneme errorrororo"
+                }
             }
         }
     }
