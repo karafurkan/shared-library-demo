@@ -9,7 +9,7 @@ import java.util.Map;
  *
  * @author ege
  */
-public class Event {
+class Event {
 
 	public static final String SLACK_MESSAGE_NEW = "Sending Slack Notification... with using anoth";
 
